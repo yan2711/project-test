@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>Test</title>
+</head>
+
+<body>
+    <header class="block-header">
+        <div class="block-header__hat">
+            <div class="block-header__title logo">itlogia.ru</div>
+            <div class="block-header__title">Обучение</div>
+            <div class="block-header__title">Карьерный рост</div>
+            <div class="block-header__title">Повышение дохода</div>
+        </div>
+
+        <div class="block-header__h1">
+            Вёрстка сайтов с <span class="header-special__text">Романом Черновым</span>
+        </div>
+
+        <div class="block-header__img_h2">
+            <img src="src/img/star_header.png" alt="" class="block-header__h2 h2-image">
+            <div class="block-header__h2 h2-text">С нуля до позиции Junior за 4 месяца</div>
+            <div class="header-button-O">Подробнее о курсе</div>
+        </div>
+    </header>
+
+    <section class="block-section">
+        <div class="block-section__title">За время обучения на курсе вы:</div>
+        <div class="block-section__list">
+            <img src="src/img/star_header.png" alt="" class="section-list__li list-img">
+            <div class="section-list__li list-text">Освоите технологии веб-верстки HTML и CSS</div>
+        </div>
+        <div class="block-section__list">
+            <img src="src/img/star_header.png" alt="" class="section-list__li list-img">
+            <div class="section-list__li list-text">Обучитесь основам программирования на JavaScript</div>
+        </div>
+        <div class="block-section__list">
+            <img src="src/img/star_header.png" alt="" class="section-list__li list-img">
+            <div class="section-list__li list-text">Научитесь верстать сайты по дизайн-макетам</div>
+        </div>
+        <div class="block-section__list">
+            <img src="src/img/star_header.png" alt="" class="section-list__li list-img">
+            <div class="section-list__li list-text">Создадите 3 крутых проекта для портфолио</div>
+        </div>
+        <div class="block-section__list li-last">
+            <img src="src/img/star_header.png" alt="" class="section-list__li list-img">
+            <div class="section-list__li list-text">Прочувствуете мощную поддержку опытного наставника</div>
+        </div>
+    </section>
+
+
+    <section class="block-last">
+        <div class="block-last__info">
+            <div class="block-last__title">Обучайтесь у профессионалов своего дела!</div>
+            <div class="block-last__h3">Посмотрите прямо сейчас ознакомительный урок от автора курса <span class="last-block">Романа Чернова</span>. На этом уроке вы познакомитесь с преподавателем и попробуете создать страницу сайта сами, повторяя за преподавателем!</div>
+            <div class="block-last__h3">Вы поймете, что с крутым преподавателем разрабатывать сайты не так сложно, как кажется. К тому же, это очень интересно и занимательно!</div>
+            <button class="block-last__button">Подробнее о курсе</button>
+        </div>
+        <div class="last-logo logo">itlogia.ru</div>
+    </section>
+
+    <section class="modal">
+        <div class="modal-block">
+            <div class="modal-close">&times;</div>
+            <div class="modal-block__header">форма обратной связи</div>
+            <div class="modal-block__title">Получите индивидуальное предложение
+                <div class="modal-special__text">на производство и поставку изделий</div>
+            </div>
+            <div class="modal-block__subtitle">Введите ваш номер телефона:</div>
+            <div class="modal-block__form">
+                <div class="modal-block__input"><input type="text" name="tel" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ"></div>
+                <div class="modal-block__button">
+                    <button type="submit" class="modal-block__btn button">Оставить заявку!</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+        $(document).ready(function($) {
+            $('.block-last__button').click(function() {
+                $('.modal').fadeIn();
+                return false;
+            });
+
+            $('.modal-close').click(function() {
+                $(this).parents('.modal').fadeOut();
+                return false;
+            });
+
+            $(document).keydown(function(e) {
+                if (e.keyCode === 27) {
+                    e.stopPropagation();
+                    $('.modal').fadeOut();
+                }
+            });
+
+            $('.modal').click(function(e) {
+                if ($(e.target).closest('.modal-block').length == 0) {
+                    $(this).fadeOut();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
